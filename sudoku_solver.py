@@ -25,8 +25,8 @@ def get_min_options_cell_with_options(board):
 				continue
 			options = get_options(board, (i, j))
 			if len(options) < len(options_for_cell):
-				min_options, options_for_cell = (i, j), options
-	return min_options, options_for_cell
+				min_options_cell, options_for_cell = (i, j), options
+	return min_options_cell, options_for_cell
 
 def solve_sudoku(board):
 	if sudoku_is_solved(board):
@@ -57,5 +57,6 @@ def main():
 	board = get_board('test.in')
 	result,solved = solve_sudoku(board)
 	print_board(result)
+
 if __name__ == "__main__":
 	main()
